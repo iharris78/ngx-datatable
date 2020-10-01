@@ -1094,7 +1094,7 @@ export class DatatableComponent implements OnInit, DoCheck, AfterViewInit {
       const allSelected = this.selected.length === last - first;
 
       // remove all existing either way
-      this.selected = [];
+      this.selected.splice(0, this.selected.length);
 
       // do the opposite here
       if (!allSelected) {
@@ -1104,7 +1104,7 @@ export class DatatableComponent implements OnInit, DoCheck, AfterViewInit {
       // before we splice, chk if we currently have all selected
       const allSelected = this.selected.length === this.rows.length;
       // remove all existing either way
-      this.selected = [];
+      this.selected.splice(0, this.selected.length);
       // do the opposite here
       if (!allSelected) {
         this.selected.push(...this.rows);
